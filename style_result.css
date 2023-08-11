@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: rgba(127, 157, 255, 0.39);
+}
+
+
+.container_result{
+    width: 800px;
+    height: 500px;
+    background-color: rgb(6, 6, 177);
+    text-align: center;
+    padding-top: 70px;
+    margin-left: 25%;
+    margin-top: 150px;
+}
+
+.header_result{
+    color: orange;
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Nerko One', cursive;
+    font-size: 60px;
+    border: solid 2px white;
+    width: 500px;
+    height: 70px;
+    margin-left: 140px;
+}
+
+.playersPoints{
+    border: solid 2px white;
+    width: 500px;
+    height: 250px;
+    margin-left: 140px;
+    margin-top: 20px;
+}
+
+.player1{
+    border: solid 2px yellowgreen;
+    width: 400px;
+    height: 70px;
+    margin-left: 50px;
+}
+
+.nameplayer1, .pointsplayer1{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0 50px;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
+    color: orange;
+    font-size: 40px;
+}
+
+.player2{
+    border: solid 2px rgb(242, 15, 64);
+    width: 400px;
+    height: 70px;
+    margin-left: 50px;
+}
+
+.nameplayer2, .pointsplayer2{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0 50px;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
+    color: orange;
+    font-size: 40px;
+}
+
+.button1, .button2 {
+    display: inline-block;
+    padding: 0px 50px;
+    margin-top: 15px;
+}
+
+.againPlay, .exit {
+    width: 120px;
+    height: 70px;
+    border-color: orange;
+    background-color: orange;
+    font-size: x-large;
+    color: rgb(55, 55, 239);
+    box-shadow: 3px 3px 0px black;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
+}
+
+button:hover{
+    background-color: red;
+    border-color: red;
+    color: white;
+    box-shadow: none;
+}
