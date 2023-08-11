@@ -8,8 +8,10 @@ body {
     border: solid 2px rgba(10, 64, 241, 0.477);
     margin: auto;
     width: 50%;
-    position: relative;
+    position: absolute;
+    text-align: center;
     top: 300px;
+    z-index: 98;
 }
 
 .form {
