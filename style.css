@@ -1,5 +1,79 @@
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+
+body {
+    background-color: white;
 }
+
+#login {
+    background-color: rgba(127, 157, 255, 0.39);
+    border: solid 2px rgba(10, 64, 241, 0.477);
+    margin: auto;
+    width: 50%;
+    position: relative;
+    top: 300px;
+}
+
+.form {
+    width: 1000px;
+    height: 300px;
+}
+
+.players_login {
+    border: solid 2px red;
+    background-color: rgb(6, 6, 177);
+    width: 700px;
+    height: 250px;
+    position: relative;
+    top: 7%;
+    left: 15%;
+}
+
+.input_login, .button_play {
+    padding: 5%;
+    padding-left: 15%;
+}
+
+#nickname_1, #nickname_2 {
+    display: inline;
+    margin-top: 20px;
+    margin: 10px;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+
+
+.button_play {
+    margin-top: -50px;
+    margin-left: 160px;
+    
+}
+
+button {
+    border-color: orange;
+    background-color: orange;
+    border-radius: 10%;
+    width:200px;
+    height:60px;
+    font-size: x-large;
+    color: rgb(55, 55, 239);
+    box-shadow: 3px 3px 0px white;
+    font-family: 'Indie Flower', cursive;
+    font-weight: bolder;
+    font-size: xx-large
+    
+}
+
+input {
+    outline:none;
+}
+
+button:hover{
+    background-color: red;
+    border-color: red;
+    color: white;
+    box-shadow: none;
+}
+
+
+
