@@ -8,7 +8,6 @@
     --img-size: 17em;
 }
 
-/* body {overflow: hidden;} */
 
 .container {
     background-color: rgba(6, 6, 177, 0.432);
@@ -27,11 +26,8 @@
     border: solid 2px black;
     min-width: 60%;
     height: 100%;
-    /* margin-left: 30%; */
     text-align: center;
     display: inline-block;
-    /* position: absolute;
-    top: 60px; */
 }
 
 .boximgPhrase {
@@ -40,7 +36,6 @@
     height: 90%;
     margin-top: 1em;
     display: inline-block;
-    /* margin-left: 80px; */
     text-align: center;
 }
 
@@ -49,7 +44,6 @@
     width: 80%;
     height: 70px;
     display: inline-block;
-    /* margin-left: 50px; */
 }
 
 .phrase{
@@ -61,13 +55,17 @@
 }
 
 
-.imageDrag{
+.imageTarget{
     border: dashed 10px rgba(255, 255, 255, 0.753);
     width: 17em;
     height: 17em;
     margin-top: 20px;
     display: inline-block;
-    /* margin-left: 120px; */
+}
+
+.imageTarget > * {
+    width: 100%;
+    height: 100%;
 }
 
 section#collection_card {
@@ -85,7 +83,6 @@ section#collection_card {
 }
 
 .cards{
-    /* margin-left: 20px; */
     text-align: center;
 }
 
@@ -105,3 +102,4 @@ section#collection_card {
 .result{
     display: none;
 }
+
