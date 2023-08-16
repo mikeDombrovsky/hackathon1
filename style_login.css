@@ -1,12 +1,6 @@
-*{
-margin: 0;
-padding: 0;
-}
-
 
 #login {
-    background-color: rgba(127, 157, 255, 0.39);
-    margin: auto;
+    background-color: rgba(65, 109, 255, 0.671);
     height: 100vh;
     position: absolute;
     text-align: center;
@@ -24,27 +18,27 @@ padding: 0;
 }
 
 .players_login {
-    margin-top: 14%;
+    /* margin-top: 14%; */
 }
 
 .name_game {
     font-family: 'Indie Flower', cursive;
     font-family: 'Nerko One', cursive;
     font-size: 60px;
-    margin-top: -30px;
+    margin-top: 50px;
     color: orange;
     text-shadow: 5px 5px 0px black;
 }
 
 .input_login, .button_play {
-    padding: 5%;
-    padding-left: 8%;
+    /* padding: 5%;
+    padding-left: 8%; */
 }
 
-#nickname_1, #nickname_2 {
+#nickname_1 {
     display: inline;
-    margin-top: 20px;
-    margin: 10px;
+    /* margin-top: 20px; */
+    margin: 25px;
     font-family: 'Indie Flower', cursive;
     font-weight: bolder;
     font-size: xx-large;
@@ -52,8 +46,8 @@ padding: 0;
 
 
 .button_play {
-    margin-top: -50px;
-    margin-left: 10px;
+    /* margin-top: 50px; */
+    /* margin-left: 10px; */
     
 }
 
@@ -69,7 +63,6 @@ button {
     font-family: 'Indie Flower', cursive;
     font-weight: bolder;
     font-size: xx-large;
-    
 }
 
 input {
