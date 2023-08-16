@@ -164,7 +164,7 @@ const imagesObjects = [
 const questionsObjects = [
   {
     id_answer: 0,
-    question: "When received my first salary in an Hi-Tech company",
+    question: "When received your first salary in an Hi-Tech company",
   },
   {
     id_answer: 1,

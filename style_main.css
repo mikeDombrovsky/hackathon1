@@ -19,7 +19,6 @@ main {
 }
 
 #imageDrag_phrase {
-
     width: 100%;
     height: 60vh;
     display: flex;
@@ -37,7 +36,6 @@ main {
 }
 
 .phraseBox {
-
     width: 100%;
     height: 70px;
     display: inline-block;
@@ -53,8 +51,8 @@ main {
 
 .imageTarget {
     border: dashed 10px rgba(255, 255, 255, 0.753);
-    width: 17em;
-    height: 17em;
+    width: var(--img-size);
+    height: var(--img-size);
     margin: 20px;
     display: inline-block;
     border-radius: 3%;
