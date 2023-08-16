@@ -1,22 +1,13 @@
 //login_page
-
 const form = document.forms[0];
-
 const login_page = document.getElementById("login");
-
-
 const player1 = form.nickname1;
-// const player2 = form.nickname2;
 
 let player1_value = player1.value;
-// let player2_value = player2.value;
-
-
 
 function clickPlay(event) {
   event.preventDefault();
   player1_value = player1.value;
-  // player2_value = player2.value;
 
   if (
     !(
@@ -34,6 +25,8 @@ const main_page = document.querySelector("main");
 const divPhrase = document.querySelector(".phrase");
 const result_page = document.querySelector("section.result");
 const imageTarget = document.querySelector(".imageTarget");
+const playerName = document.querySelector(".nameplayer1");
+const playerPoints = document.querySelector(".pointsplayer1");
 
 const imagesObjects = [
   {
@@ -183,31 +176,31 @@ const questionsObjects = [
   },
   {
     id_answer: 3,
-    question: "when you look at classmates who do not work in IT",
+    question: "When you look at classmates who do not work in IT",
   },
   {
     id_answer: 4,
-    question: "when you must have done a hackathon before thursday",
+    question: "When you must have done a hackathon before thursday",
   },
   {
     id_answer: 5,
-    question: "when you have to refactor",
+    question: "When you have to refactor",
   },
   {
     id_answer: 6,
-    question: "when found the answer on Stack Overflow",
+    question: "When found the answer on Stack Overflow",
   },
   {
     id_answer: 7,
-    question: "got a job in a startup",
+    question: "Got a job in a startup",
   },
   {
     id_answer: 8,
-    question: "reaction to the first question in a technical interview",
+    question: "Reaction to the first question in a technical interview",
   },
   {
     id_answer: 9,
-    question: "how the senior developer looks at you before giving a task",
+    question: "How the senior developer looks at you before giving a task",
   },
 ];
 
@@ -219,33 +212,59 @@ function fillPoints(){
   }
 }
 
+console.log(imagesObjects);
+
 let cards = document.querySelector(".cards");
 let usedQuestion = [];
 
-nextMeme();
+let pointSum = 0;
 
+let divPointSum = document.getElementById('point_sum')
 
-//делаем получатель карточек
+addImages();
+addPhrase();
 
 imageTarget.addEventListener("drop", handleDrop);
 imageTarget.addEventListener("dragover", allowDrop);
-imageTarget.addEventListener("dragenter", handleDragEnter);
-imageTarget.addEventListener("dragleave", handleDragLeave);
+imageTarget.addEventListener("dragstart", dragStart);
+
+function mix() {
+  clean();
+  addImages();
+}
 
 function nextMeme() {
-  console.log(usedQuestion); 
+  if (imageTarget.children.length == 0){
+   return;
+  }
   if (usedQuestion.length == 10){
-    console.log('finish');
-    main_page.style.display ="none"
+    playerName.innerHTML = player1.value;
+    playerPoints.innerHTML = pointSum;
     result_page.style.display = "block";
     return;
   }
+  let currentImg = imageTarget.querySelector('img')
+  console.log(currentImg);
+  let id = currentImg.getAttribute('id')
+  let points = imagesObjects[id].points;
+  pointSum += points;
+  console.log(currentImg, id, points, pointSum);
+  divPointSum.innerHTML = `Current points: ${pointSum}`
 
-  clean()
-
+  clean();
   addImages();
-
   addPhrase();
+}
+
+function playAgain() {
+  result_page.style.display = 'none';
+  pointSum = 0;
+  divPointSum.innerHTML = 'Current points: 0';
+  clean();
+  usedQuestion = [];
+  addImages();
+  addPhrase();
+
 }
 
 function clean(){
@@ -255,38 +274,20 @@ function clean(){
 
 function dragStart(event) {
   event.dataTransfer.setData("startId", event.target.id);
-  //console.log("dragStart", event.target.id);
-  let id = event.dataTransfer.getData("startId");
-  //console.log(id);
-  //console.log(event.target);
-}
-
-function handleDragEnter() {
-  //console.log("dragenter");
-}
-
-function handleDragLeave() {
-  //console.log("dragleave");
 }
 
 function allowDrop(event) {
   event.preventDefault();
-  //console.log("dragover");
+  console.log("dragover");
 }
 
 function handleDrop(event) {
   event.preventDefault();
-  if (imageTarget.children.length > 0) return;
-
-  //console.log("handledrop");
+  if (this.children.length > 0 ) return;
   let id = event.dataTransfer.getData("startId");
   let div = document.getElementById(id);
-  //console.log(id);
-  //console.log(div);
-  imageTarget.append(div);
+  event.target.append(div);
 }
-
-//добавление карточек
 
 function addImages() {
   let arr = getRandomNumbersImg();
@@ -296,21 +297,20 @@ function addImages() {
     let image = document.createElement("img");
     image.setAttribute("draggable", "true");
     image.setAttribute("src", `${imagesObjects[arr[i]].link_img}`);
-    image.setAttribute("id", `${i}`);
+    let id = imagesObjects[arr[i]].id_img;
+    image.setAttribute("id", `${id}`);
     image.addEventListener("dragstart", dragStart);
+    divCard.addEventListener("drop", handleDrop);
+    divCard.addEventListener("dragover", allowDrop);
     divCard.appendChild(image);
     cards.appendChild(divCard);
   }
 }
 
-//добавление фраз
-
 function addPhrase() {
   let number = getRandomNumberQuestion();
   divPhrase.textContent = questionsObjects[number].question;
 }
-
-//начало: сделали рандомизарот
 
 function getRandomNumberQuestion() {
   let number = getRandomNumber(10);
@@ -339,4 +339,3 @@ function getRandomNumber(n) {
   return Math.floor(Math.random() * n);
 }
 
-//конец: сделали рандомизарот
