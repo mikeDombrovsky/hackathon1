@@ -37,7 +37,7 @@ main {
 
 .phraseBox {
     width: 100%;
-    height: 70px;
+    /* height: 70px; */
     display: inline-block;
 }
 
@@ -100,5 +100,6 @@ section#collection_card {
     font-weight: bolder;
     font-size: xx-large;
     color: white;
-    margin-top: 30px;
+    margin: 15px 0;
 }
+

@@ -208,7 +208,7 @@ fillPoints()
 
 function fillPoints(){
   for(let obj of imagesObjects){
-    obj.points = getRandomNumber(10);
+    obj.points = getRandomNumber(10) + 3;
   }
 }
 
