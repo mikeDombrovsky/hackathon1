@@ -28,7 +28,7 @@ const imageTarget = document.querySelector(".imageTarget");
 const playerName = document.querySelector(".nameplayer1");
 const playerPoints = document.querySelector(".pointsplayer1");
 
-const imagesObjects = [
+const imageObjects = [
   {
     id_img: 0,
     points:0,
@@ -161,7 +161,7 @@ const imagesObjects = [
   },
 ];
 
-const questionsObjects = [
+const questionObjects = [
   {
     id_answer: 0,
     question: "When received your first salary in an Hi-Tech company",
@@ -207,12 +207,10 @@ const questionsObjects = [
 fillPoints()
 
 function fillPoints(){
-  for(let obj of imagesObjects){
+  for(let obj of imageObjects){
     obj.points = getRandomNumber(10) + 3;
   }
 }
-
-console.log(imagesObjects);
 
 let cards = document.querySelector(".cards");
 let usedQuestion = [];
@@ -246,7 +244,7 @@ function nextMeme() {
   let currentImg = imageTarget.querySelector('img')
   console.log(currentImg);
   let id = currentImg.getAttribute('id')
-  let points = imagesObjects[id].points;
+  let points = imageObjects[id].points;
   pointSum += points;
   console.log(currentImg, id, points, pointSum);
   divPointSum.innerHTML = `Current points: ${pointSum}`
@@ -278,7 +276,6 @@ function dragStart(event) {
 
 function allowDrop(event) {
   event.preventDefault();
-  console.log("dragover");
 }
 
 function handleDrop(event) {
@@ -296,8 +293,8 @@ function addImages() {
     divCard.classList.add("card");
     let image = document.createElement("img");
     image.setAttribute("draggable", "true");
-    image.setAttribute("src", `${imagesObjects[arr[i]].link_img}`);
-    let id = imagesObjects[arr[i]].id_img;
+    image.setAttribute("src", `${imageObjects[arr[i]].link_img}`);
+    let id = imageObjects[arr[i]].id_img;
     image.setAttribute("id", `${id}`);
     image.addEventListener("dragstart", dragStart);
     divCard.addEventListener("drop", handleDrop);
@@ -309,7 +306,7 @@ function addImages() {
 
 function addPhrase() {
   let number = getRandomNumberQuestion();
-  divPhrase.textContent = questionsObjects[number].question;
+  divPhrase.textContent = questionObjects[number].question;
 }
 
 function getRandomNumberQuestion() {
