@@ -1,0 +1,11 @@
+Vladislav Kleiman & Michael Dombrovsky: Meme game
+Project Structure:5/10
+HTML Structure:7/10
+CSS and Design: 6/10
+JS and DOM: 7/10
+Clarity: 0/10
+score: 6
+It is a nice game and I can see the knowledge behind it in the script, but the logic of the scores is not clear. 
+Also design is divided in the CSS without comments or instructions. 
+the HTML structure is decent, with clear sections and good use of semantics. 
+However, there are areas, like resource optimization, inline styling, and inline JavaScript, that could be improved.
